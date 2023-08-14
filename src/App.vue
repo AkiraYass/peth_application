@@ -1,5 +1,7 @@
 <template>
-  <peth-game />
+  <div ontouchstart="">
+    <peth-game />
+  </div>
 </template>
 
 <script setup lang="ts">
