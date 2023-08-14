@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="limit-config">
-                <div class="config-title">カウントし始めを選択</div>
+                <div class="config-title">カウント数選択</div>
                 <div class="form-limit">
                     <input type="range" id="limit-slider" v-model="store.life" min="10" max="70">
                     <label class="now-select">{{ store.life }}</label>
@@ -82,9 +82,10 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .title {
+    margin: 10px 0;
     text-align: center;
     font-weight: bold;
-    font-size: 75px;
+    font-size: 65px;
     border-bottom: solid 2px grey;
 }
 
@@ -152,7 +153,7 @@ input[name="select-playernum"]:hover {
 }
 
 .limit-config {
-    margin-left: 10px;
+    margin: 0 5px 0 5px;
 }
 
 .form-limit {

@@ -100,10 +100,9 @@ const playerChange = () => {
     if (limitClick.value === 3) {
         return
     }
-    limitClick.value = 3;
-    audio_peth.pause()
     audio_player_change.currentTime = 0
     audio_player_change.play()
+    limitClick.value = 3;
     nowPlayer.value++;
     if (nowPlayer.value > store.player_num) {
         nowPlayer.value = 1
@@ -136,15 +135,17 @@ onBeforeMount(() => {
 
 <style scoped lang="scss">
 .contents {
-    height: 100vh;
     height: calc(var(--vh, 1vh)*100);
+    touch-action: manipulation;
 }
 
 .game-contents {
     position: relative;
-    margin: auto;
-    margin-top: 30px;
-    width: 90%;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    //margin-top: 30px;
+    width: 100%;
     height: 100%;
 }
 
@@ -152,6 +153,7 @@ onBeforeMount(() => {
     position: absolute;
     text-align: center;
     padding: 10px;
+    margin: 10px;
     width: 100px;
     border-radius: 20px;
     box-shadow: inset 0 10px 25px 0 rgba(0, 0, 0, .5);
@@ -210,7 +212,6 @@ onBeforeMount(() => {
     justify-content: center;
     width: 350px;
     height: fit-content;
-    touch-action: manipulation;
 }
 
 .now-turn {
