@@ -1,5 +1,5 @@
 <template>
-    <div class="contents" ontouchstart="">
+    <div class="contents">
         <div v-if="store.player_num === -1" class="error-contents">
             <error />
         </div>
@@ -65,6 +65,7 @@ const audio_bgm_playing = new Audio(bgmPlayingSound);
 const router = useRouter();
 const loser = ref<number>(0);
 const winner = ref<number[]>([]);
+const vh = window.innerHeight * 0.01;
 
 audio_bgm_playing.volume = 0.7
 // Function
@@ -82,6 +83,7 @@ const onClickCount = () => {
     if (limitPeth.value === 0) {
         playersList[countTarget].count.value = 0
         audio_peth.pause()
+        audio_bgm_playing.pause()
         audio_not_peth.play()
         culcResult()
         return
@@ -124,6 +126,7 @@ const onClickReturnTop = () => {
     router.push("/")
 }
 onBeforeMount(() => {
+    document.documentElement.style.setProperty('--vh', `${vh}px`)
     startSetup()
     audio_bgm_playing.play()
 })
@@ -132,7 +135,8 @@ onBeforeMount(() => {
 
 <style scoped lang="scss">
 .contents {
-    height: 90vh;
+    height: 100vh;
+    height: calc(var(--vh, 1vh)*100);
 }
 
 .game-contents {
@@ -239,9 +243,17 @@ onBeforeMount(() => {
     color: white;
 }
 
-.peth-count:hover {
-    cursor: pointer;
-    background: grey;
+@media (hover:hover) and (pointer: fine) {
+    .peth-count:hover {
+        cursor: pointer;
+        background: grey;
+    }
+}
+
+@media (hover:none) {
+    .peth-count:active {
+        background: grey;
+    }
 }
 
 .count-color1 {
@@ -281,7 +293,7 @@ onBeforeMount(() => {
     margin: 0 auto;
     background-color: white;
     box-shadow: inset 0 10px 25px 0 rgba(0, 0, 0, .3);
-    border-radius: 50px;
+    border-radius: 30px;
 }
 
 .result-title {
