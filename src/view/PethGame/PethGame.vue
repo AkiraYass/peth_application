@@ -1,20 +1,20 @@
 <template>
-    <div class="game-area">
-        <start-page />
+    <div class="contents">
         <back-ground />
+        <router-view></router-view>
     </div>
 </template>
 
 
 <script setup lang="ts">
 import BackGround from './components/BackGround.vue'
-import StartPage from './components/StartPage.vue'
 </script>
 
 
 <style scoped lang="scss">
-.game-area {
+.contents {
     width: 100%;
+    height: 100%;
 }
 
 .game-area:hover {
