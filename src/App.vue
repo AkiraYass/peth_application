@@ -1,5 +1,5 @@
 <template>
-  <div ontouchstart="">
+  <div>
     <peth-game />
   </div>
 </template>

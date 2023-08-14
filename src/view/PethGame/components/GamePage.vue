@@ -1,5 +1,5 @@
-<template @onMounted="startSetup">
-    <div class="contents">
+<template>
+    <div class="contents" ontouchstart="">
         <div v-if="store.player_num === -1" class="error-contents">
             <error />
         </div>
