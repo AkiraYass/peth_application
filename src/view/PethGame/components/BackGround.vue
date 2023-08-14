@@ -1,51 +1,51 @@
 <template>
     <div class="back-ground">
-        <div v-for="n in 4">
+        <div v-for="n in 4" :key="n">
             <div>
                 <ul>
-                    <li v-for="i in 30">
+                    <li v-for="i in 30" :key="i">
                         <span class="peth1">ペス</span>
                     </li>
                 </ul>
             </div>
             <div>
                 <ul>
-                    <li v-for="i in 30">
+                    <li v-for="i in 30" :key="i">
                         <span class="peth2">ぺす</span>
                     </li>
                 </ul>
             </div>
             <div>
                 <ul>
-                    <li v-for="i in 30">
+                    <li v-for="i in 30" :key="i">
                         <span class="peth1">PETH</span>
                     </li>
                 </ul>
             </div>
             <div>
                 <ul>
-                    <li v-for="i in 30">
+                    <li v-for="i in 30" :key="i">
                         <span class="peth1">ペス</span>
                     </li>
                 </ul>
             </div>
             <div>
                 <ul>
-                    <li v-for="i in 30">
+                    <li v-for="i in 30" :key="i">
                         <span class="peth2">ぺす</span>
                     </li>
                 </ul>
             </div>
             <div>
                 <ul>
-                    <li v-for="i in 30">
+                    <li v-for="i in 30" :key="i">
                         <span class="peth1">PETH</span>
                     </li>
                 </ul>
             </div>
             <div>
                 <ul>
-                    <li v-for="i in 30">
+                    <li v-for="i in 30" :key="i">
                         <span class="peth2">ペス</span>
                     </li>
                 </ul>
