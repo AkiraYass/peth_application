@@ -65,7 +65,6 @@ const audio_bgm_playing = new Audio(bgmPlayingSound);
 const router = useRouter();
 const loser = ref<number>(0);
 const winner = ref<number[]>([]);
-const vh = window.innerHeight * 0.01;
 
 audio_bgm_playing.volume = 0.7
 // Function
@@ -126,16 +125,27 @@ const onClickReturnTop = () => {
     router.push("/")
 }
 onBeforeMount(() => {
-    document.documentElement.style.setProperty('--vh', `${vh}px`)
     startSetup()
     audio_bgm_playing.play()
 })
+
+// display-size-flex
+const setFillHeight = () => {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`)
+}
+// 画面のサイズ変動があった時に高さを再計算する
+window.addEventListener('resize', setFillHeight);
+
+// 初期化
+setFillHeight();
 </script>
 
 
 <style scoped lang="scss">
 .contents {
-    height: calc(var(--vh, 1vh)*100);
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh)*100);
     touch-action: manipulation;
 }
 

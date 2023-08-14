@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="limit-config">
-                <div class="config-title">カウント数選択</div>
+                <div class="config-title">カウント選択</div>
                 <div class="form-limit">
                     <input type="range" id="limit-slider" v-model="store.life" min="10" max="70">
                     <label class="now-select">{{ store.life }}</label>
@@ -141,7 +141,7 @@ onMounted(() => {
 .radio-button {
     margin: 10px auto;
     text-align: center;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .radio-button>label {
