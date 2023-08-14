@@ -138,7 +138,6 @@ onBeforeMount(() => {
 .contents {
     height: 100vh;
     height: calc(var(--vh, 1vh)*100);
-    touch-action: manipulation;
 }
 
 .game-contents {
@@ -211,6 +210,7 @@ onBeforeMount(() => {
     justify-content: center;
     width: 350px;
     height: fit-content;
+    touch-action: manipulation;
 }
 
 .now-turn {
