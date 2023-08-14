@@ -88,6 +88,7 @@ const onClickCount = () => {
         culcResult()
         return
     }
+    audio_peth.pause()
     audio_peth.currentTime = 0
     audio_peth.play()
     limitClick.value--
@@ -137,6 +138,7 @@ onBeforeMount(() => {
 .contents {
     height: 100vh;
     height: calc(var(--vh, 1vh)*100);
+    touch-action: manipulation;
 }
 
 .game-contents {
